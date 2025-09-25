@@ -1,4 +1,3 @@
-import { initDatabaseClient } from '@pins/service-name-database';
 import { initLogger } from '../util/logger.js';
 import { initRedis } from '../redis/index.js';
 
@@ -16,10 +15,6 @@ export class BaseService {
 	 */
 	logger;
 	/**
-	 * @type {import('@pins/service-name-database/src/client').PrismaClient}
-	 */
-	dbClient;
-	/**
 	 * @type {import('../redis/redis-client.js').RedisClient|null}
 	 */
 	redisClient;
@@ -31,21 +26,11 @@ export class BaseService {
 		this.#config = config;
 		const logger = initLogger(config);
 		this.logger = logger;
-		this.dbClient = initDatabaseClient(config, logger);
 		this.redisClient = initRedis(config.session, logger);
 	}
 
 	get cacheControl() {
 		return this.#config.cacheControl;
-	}
-
-	/**
-	 * Alias of dbClient
-	 *
-	 * @returns {import('@pins/service-name-database/src/client').PrismaClient}
-	 */
-	get db() {
-		return this.dbClient;
 	}
 
 	get gitSha() {

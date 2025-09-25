@@ -1,5 +1,3 @@
-import { Prisma } from '@pins/service-name-database/src/client/index.js';
-
 /**
  * A catch-all error handler to use as express middleware
  *
@@ -8,8 +6,7 @@ import { Prisma } from '@pins/service-name-database/src/client/index.js';
  */
 export function buildDefaultErrorHandlerMiddleware(logger) {
 	return (error, req, res, next) => {
-		const wrappedError = wrapPrismaErrors(error);
-		const message = wrappedError.message || 'unknown error';
+		const message = error.message || 'unknown error';
 		logger.error(error, message); // log the original error to include full details
 
 		if (res.headersSent) {
@@ -25,33 +22,6 @@ export function buildDefaultErrorHandlerMiddleware(logger) {
 			messages: [message, 'Try again later']
 		});
 	};
-}
-
-/**
- * Wrap prisma errors so they are not shown directly to users.
- * This is a fallback, controllers should handle Prisma validation errors directly so that error messages can be specific
- *
- * @param {Error} error
- * @returns {Error}
- */
-export function wrapPrismaErrors(error) {
-	if (error instanceof Prisma.PrismaClientKnownRequestError) {
-		return new Error(`Request could not be handled (code: ${error.code})`);
-	}
-	if (error instanceof Prisma.PrismaClientUnknownRequestError) {
-		return new Error(`Request could not be handled (code: unknown)`);
-	}
-	if (error instanceof Prisma.PrismaClientValidationError) {
-		return new Error(`Request could not be handled (code: validation)`);
-	}
-	if (error instanceof Prisma.PrismaClientInitializationError) {
-		let code = error.errorCode;
-		if (!code && error.message.toLowerCase().includes(`can't reach database server`)) {
-			code = 'P1001';
-		}
-		return new Error(`Connection error (code: ${code || 'unknown'})`);
-	}
-	return error;
 }
 
 /**

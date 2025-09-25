@@ -5,12 +5,11 @@ import { cacheNoStoreMiddleware } from '../middleware/cache.js';
  * @param {Object} params
  * @param {import('pino').BaseLogger} params.logger
  * @param {string} [params.gitSha]
- * @param {import('@pins/service-name-database/src/client').PrismaClient} params.dbClient
  * @returns {import('express').Router}
  */
-export function createMonitoringRoutes({ gitSha, dbClient, logger }) {
+export function createMonitoringRoutes({ gitSha, logger }) {
 	const router = createRouter();
-	const handleHealthCheck = buildHandleHeathCheck(logger, gitSha, dbClient);
+	const handleHealthCheck = buildHandleHeathCheck(logger, gitSha);
 
 	router.use(cacheNoStoreMiddleware); // don't store monitoring responses, always get fresh data
 
@@ -29,24 +28,14 @@ export function handleHeadHealthCheck(_, response) {
 /**
  * @param {import('pino').BaseLogger} logger
  * @param {string} [gitSha]
- * @param {import('@pins/service-name-database/src/client').PrismaClient} dbClient
  * @returns {import('express').RequestHandler}
  */
-export function buildHandleHeathCheck(logger, gitSha, dbClient) {
+export function buildHandleHeathCheck(logger, gitSha) {
 	return async (_, response) => {
-		let database = false;
-		try {
-			await dbClient.$queryRaw`SELECT 1`;
-			database = true;
-		} catch (e) {
-			logger.warn(e, 'database connection error');
-		}
-
 		response.status(200).send({
 			status: 'OK',
 			uptime: process.uptime(),
-			commit: gitSha,
-			database: database ? 'OK' : 'ERROR' // should this be a different response code?
+			commit: gitSha
 		});
 	};
 }

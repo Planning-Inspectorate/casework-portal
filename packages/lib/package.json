@@ -10,7 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "@azure/msal-node": "*",
-    "@pins/service-name-database": "*",
     "connect-redis": "*",
     "express-session": "*",
     "notifications-node-client": "*",
