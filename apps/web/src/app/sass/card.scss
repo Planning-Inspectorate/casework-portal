@@ -1,0 +1,354 @@
+$pins-colours-teal-100: #10847e;
+$pins-colours-grey-100: #f3f2f1;
+
+.pins-card {
+	margin-bottom: 40px;
+	background: $pins-colours-grey-100;
+	position: relative;
+	width: 100%;
+
+	border-bottom: 4px solid $pins-colours-teal-100;
+	border-left: 0;
+	border-right: 0;
+	border-top: 0;
+}
+
+@media (min-width: 40.0625em) {
+	.pins-card {
+		margin-bottom: 48px;
+	}
+}
+
+.pins-card__img {
+	border-bottom: 1px solid #f0f4f5;
+	display: block;
+	width: 100%;
+}
+
+@media print {
+	.pins-card__img {
+		display: none;
+	}
+}
+
+.pins-card__content {
+	padding: 24px;
+	position: relative;
+}
+
+.pins-card__content > *:first-child {
+	margin-top: 0;
+}
+
+.pins-card__content > *:last-child {
+	margin-bottom: 0;
+}
+
+@media (min-width: 40.0625em) {
+	.pins-card__content {
+		padding: 32px;
+	}
+}
+
+.pins-card__heading,
+.pins-card__metadata,
+.pins-card__description {
+	margin-bottom: 16px;
+}
+
+.pins-card--clickable {
+	border-bottom-width: 4px;
+}
+
+.pins-card--clickable:hover,
+.pins-card--clickable:active {
+	cursor: pointer;
+}
+
+.pins-card--clickable:hover .pins-card__heading a,
+.pins-card--clickable:hover .pins-card__link,
+.pins-card--clickable:active .pins-card__heading a,
+.pins-card--clickable:active .pins-card__link {
+	color: $pins-colours-teal-100;
+	text-decoration: none;
+}
+
+.pins-card--clickable:hover .pins-card__heading a:focus,
+.pins-card--clickable:hover .pins-card__link:focus,
+.pins-card--clickable:active .pins-card__heading a:focus,
+.pins-card--clickable:active .pins-card__link:focus {
+	color: #212b32;
+}
+
+.pins-card--clickable:hover {
+	border-color: #aeb7bd;
+}
+
+.pins-card--clickable:active {
+	border-color: #aeb7bd;
+	bottom: -1px;
+}
+
+.pins-card-group {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 16px;
+	padding: 0;
+}
+
+@media (max-width: 48.0525em) {
+	.pins-card-group {
+		margin-bottom: 40px;
+	}
+}
+
+.pins-card-group + h2,
+.pins-card-group + .pins-heading-l,
+.pins-card-group + h3,
+.pins-card-group + .pins-heading-m {
+	padding-top: 0;
+}
+
+.pins-card-group__item {
+	display: flex;
+	list-style-type: none;
+	margin-bottom: 0;
+}
+
+@media (max-width: 48.0525em) {
+	.pins-card-group__item {
+		flex: 0 0 100%;
+	}
+}
+
+.pins-card-group__item .pins-card {
+	margin-bottom: 32px;
+}
+
+@media (max-width: 48.0525em) {
+	.pins-card-group__item .pins-card {
+		margin-bottom: 16px;
+	}
+
+	.pins-card-group__item:last-child .pins-card {
+		margin-bottom: 0;
+	}
+}
+
+.pins-card--feature {
+	margin-top: 40px;
+}
+
+@media (min-width: 40.0625em) {
+	.pins-card--feature {
+		margin-top: 48px;
+	}
+}
+
+.pins-card__heading--feature {
+	background: #005eb8;
+	color: #fff;
+	display: inline-block;
+	left: -25px;
+	margin-bottom: 8px;
+	margin-right: -24px;
+	padding: 8px 24px;
+	position: relative;
+	top: -8px;
+}
+
+@media (min-width: 40.0625em) {
+	.pins-card__heading--feature {
+		left: -33px;
+		margin-right: -32px;
+		padding: 8px 32px;
+		top: -16px;
+	}
+}
+
+.pins-card__content--feature {
+	padding-top: 0 !important;
+}
+
+.pins-card--care {
+	margin-top: 40px;
+}
+
+@media (min-width: 40.0625em) {
+	.pins-card--care {
+		margin-top: 48px;
+	}
+}
+
+.pins-card--care .pins-card--care__heading-container {
+	background-color: #005eb8;
+	color: #fff;
+}
+
+@media print {
+	.pins-card--care {
+		border: 4px solid #212b32;
+		color: #212b32;
+		page-break-inside: avoid;
+	}
+}
+
+.pins-card--care__heading-container {
+	padding-left: 24px;
+	padding-right: 24px;
+	padding-bottom: 16px;
+	padding-top: 16px;
+	position: relative;
+}
+
+@media (min-width: 40.0625em) {
+	.pins-card--care__heading-container {
+		padding-left: 32px;
+	}
+}
+
+@media (min-width: 40.0625em) {
+	.pins-card--care__heading-container {
+		padding-right: 32px;
+	}
+}
+
+.pins-card--care__heading {
+	font-weight: 600;
+	font-size: 20px;
+	font-size: 1.25rem;
+	line-height: 1.4;
+	margin: 0;
+	padding-top: 0;
+}
+
+@media (min-width: 40.0625em) {
+	.pins-card--care__heading {
+		font-size: 24px;
+		font-size: 1.5rem;
+		line-height: 1.33333;
+	}
+}
+
+@media print {
+	.pins-card--care__heading {
+		font-size: 18pt;
+		line-height: 1.15;
+	}
+}
+
+@media print {
+	.pins-card--care__heading {
+		color: #212b32;
+		fill: #212b32;
+	}
+
+	.pins-card--care__heading:active,
+	.pins-card--care__heading:focus,
+	.pins-card--care__heading:visited {
+		color: #212b32;
+	}
+}
+
+.pins-card--care__arrow {
+	bottom: -10px;
+	display: block;
+	height: 20px;
+	left: 30px;
+	overflow: hidden;
+	position: absolute;
+	transform: rotate(45deg);
+	width: 20px;
+}
+
+@media print {
+	.pins-card--care__arrow {
+		display: none;
+	}
+}
+
+@media (min-width: 40.0625em) {
+	.pins-card--care__arrow {
+		left: 38px;
+	}
+}
+
+.pins-card--care__arrow:before,
+.pins-card--care__arrow:after {
+	border: solid 32px #005eb8;
+	content: '';
+	display: block;
+	height: 0;
+	position: absolute;
+	top: 0;
+	transform: rotate(45deg);
+	width: 0;
+}
+
+.pins-card--care--urgent .pins-card--care__heading-container {
+	background-color: #d5281b;
+	color: #fff;
+}
+
+@media print {
+	.pins-card--care--urgent {
+		border: 6px solid #212b32;
+		color: #212b32;
+		page-break-inside: avoid;
+	}
+}
+
+.pins-card--care--urgent .pins-card--care__arrow:before,
+.pins-card--care--urgent .pins-card--care__arrow:after {
+	border-color: #d5281b;
+}
+
+.pins-card--care--emergency .pins-card--care__heading-container {
+	background-color: #d5281b;
+	color: #fff;
+}
+
+@media print {
+	.pins-card--care--emergency {
+		border: 8px solid #212b32;
+		color: #212b32;
+		page-break-inside: avoid;
+	}
+}
+
+.pins-card--care--emergency .pins-card--care__arrow:before,
+.pins-card--care--emergency .pins-card--care__arrow:after {
+	border-color: #d5281b;
+}
+
+.pins-card--care--emergency .pins-card__content {
+	background-color: #212b32;
+	border: 0;
+	color: #fff;
+	position: static;
+}
+
+.pins-card--care--emergency .pins-card__content a {
+	color: #fff;
+}
+
+.pins-card--care--emergency .pins-card__content a:focus {
+	color: #212b32;
+}
+
+.pins-card--care--emergency .pins-details,
+.pins-card--care--emergency .pins-details__summary {
+	color: #fff;
+}
+
+.pins-card--care--emergency .pins-details__summary:hover {
+	color: #fff;
+}
+
+.pins-card--care--emergency .pins-details__summary:focus {
+	color: #212b32;
+}
+
+.pins-card--care--emergency .pins-action-link__link .pins-icon__arrow-right-circle {
+	fill: #fff;
+}

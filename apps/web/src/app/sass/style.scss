@@ -7,6 +7,7 @@ $font-family: arial, helvetica, sans-serif;
 	$govuk-font-family: $font-family
 );
 @use './header';
+@use './card';
 
 // set font-family for any autocomplete menu items
 .autocomplete__menu {
@@ -26,3 +27,22 @@ $font-family: arial, helvetica, sans-serif;
 .status-tag-width {
 	max-width: 250px !important;
 }
+
+//.pins-card-group {
+//  display: flex;
+//  flex-wrap: wrap;
+//  margin-bottom: 16px;
+//  padding: 0;
+//}
+//
+//.pins-card-group__item {
+//  display: flex;
+//  list-style-type: none;
+//  margin-bottom: 0;
+//
+//  background: rgba(0, 0, 0, 0);
+//  border-bottom: 4px solid $pins-colours-teal-100;
+//  border-left: 0;
+//  border-right: 0;
+//  border-top: 0;
+//}

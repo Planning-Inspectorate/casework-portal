@@ -18,6 +18,8 @@
     "accessible-autocomplete": "*",
     "body-parser": "*",
     "connect-redis": "*",
+    "date-fns": "*",
+    "date-fns-tz": "*",
     "dotenv": "*",
     "express": "*",
     "express-session": "*",

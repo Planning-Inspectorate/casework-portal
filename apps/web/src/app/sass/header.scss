@@ -26,8 +26,9 @@ $pins-colours-teal-100: #10847e;
 	margin-bottom: 5px;
 }
 
-.pins-header-navigation {
+.pins-header-navigation.govuk-header__navigation {
 	text-align: left;
+	padding: 0;
 
 	.govuk-header__navigation-list {
 		.govuk-header__navigation-item {
