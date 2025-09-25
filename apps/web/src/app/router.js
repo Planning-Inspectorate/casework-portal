@@ -6,7 +6,7 @@ import { createErrorRoutes } from './views/static/error/index.js';
 import { cacheNoCacheMiddleware } from '@pins/casework-portal-lib/middleware/cache.js';
 
 /**
- * @param {import('#service').App2Service} service
+ * @param {import('#service').WebService} service
  * @returns {import('express').Router}
  */
 export function buildRouter(service) {

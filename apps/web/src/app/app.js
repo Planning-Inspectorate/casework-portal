@@ -4,7 +4,7 @@ import { addLocalsConfiguration } from '#util/config-middleware.js';
 import { createBaseApp } from '@pins/casework-portal-lib/app/app.js';
 
 /**
- * @param {import('#service').App2Service} service
+ * @param {import('#service').WebService} service
  * @returns {Express}
  */
 export function createApp(service) {

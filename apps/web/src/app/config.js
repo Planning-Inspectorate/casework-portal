@@ -42,8 +42,7 @@ export function loadConfig() {
 		PORT,
 		NODE_ENV,
 		REDIS_CONNECTION_STRING,
-		SESSION_SECRET,
-		SQL_CONNECTION_STRING
+		SESSION_SECRET
 	} = process.env;
 
 	const buildConfig = loadBuildConfig();
@@ -96,9 +95,6 @@ export function loadConfig() {
 		},
 		cacheControl: {
 			maxAge: CACHE_CONTROL_MAX_AGE || '1d'
-		},
-		database: {
-			datasourceUrl: SQL_CONNECTION_STRING
 		},
 		gitSha: GIT_SHA,
 		// the log level to use

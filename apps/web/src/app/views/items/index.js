@@ -3,7 +3,7 @@ import { asyncHandler } from '@pins/casework-portal-lib/util/async-handler.js';
 import { buildListItems } from './list/controller.js';
 
 /**
- * @param {import('#service').App2Service} service
+ * @param {import('#service').WebService} service
  * @returns {import('express').Router}
  */
 export function createRoutes(service) {
