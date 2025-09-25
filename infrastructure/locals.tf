@@ -1,6 +1,6 @@
 locals {
   org                = "pins"
-  service_name       = "service-name"
+  service_name       = "casework-portal"
   primary_location   = "uk-south"
   secondary_location = "uk-west"
 

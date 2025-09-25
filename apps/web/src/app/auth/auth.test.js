@@ -2,8 +2,8 @@ import { describe, it, mock } from 'node:test';
 import assert from 'node:assert';
 import express from 'express';
 import { createRoutesAndGuards } from './router.js';
-import { mockLogger } from '@pins/service-name-lib/testing/mock-logger.js';
-import { TestServer } from '@pins/service-name-lib/testing/test-server.js';
+import { mockLogger } from '@pins/casework-portal-lib/testing/mock-logger.js';
+import { TestServer } from '@pins/casework-portal-lib/testing/test-server.js';
 
 describe('auth', () => {
 	describe('authentication', () => {

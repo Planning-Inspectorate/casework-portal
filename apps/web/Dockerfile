@@ -13,12 +13,12 @@ COPY package-lock.json .
 COPY packages ./packages
 COPY apps/web ./apps/web
 
-RUN npm ci --loglevel notice --workspace=service-name-web --ignore-scripts
+RUN npm ci --loglevel notice --workspace=casework-portal-web --ignore-scripts
 
 ENV NODE_ENV=production
 ENV GIT_SHA=$GIT_SHA
 
-RUN npm run build --workspace=service-name-web
+RUN npm run build --workspace=casework-portal-web
 RUN npm run db-generate
 
 # --------------------------------

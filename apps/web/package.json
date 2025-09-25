@@ -1,5 +1,5 @@
 {
-  "name": "service-name-web",
+  "name": "casework-portal-web",
   "version": "0.0.0",
   "private": true,
   "main": "index.js",
@@ -14,7 +14,7 @@
   "dependencies": {
     "@azure/msal-node": "*",
     "@microsoft/microsoft-graph-client": "*",
-    "@pins/service-name-lib": "^0.0.0",
+    "@pins/casework-portal-lib": "^0.0.0",
     "accessible-autocomplete": "*",
     "body-parser": "*",
     "connect-redis": "*",
