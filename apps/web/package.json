@@ -1,5 +1,5 @@
 {
-  "name": "service-name-app-2",
+  "name": "service-name-web",
   "version": "0.0.0",
   "private": true,
   "main": "index.js",

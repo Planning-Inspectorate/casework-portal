@@ -13,6 +13,6 @@ Generally this repo can be copied/cloned for a new project, and a few find+repla
 
 * Replace 'service-name' with the new service name in the codebase.
 * Replace `app-1` with the app name, e.g. `api`
-* Replace `app-2` with the app name, e.g. `web`
+* Replace `web` with the app name, e.g. `web`
 
 App 1 is given in the PINS/Public style, App 2 is given in the back office/internal style, with Entra Auth.
