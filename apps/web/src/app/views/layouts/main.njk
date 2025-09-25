@@ -11,9 +11,9 @@
 
 {% block pageTitle %}
 	{% if pageTitle %}
-		{{ pageTitle }} - {{ serviceName | default(config.headerTitle) }}
+		{{ pageTitle }} - {{ serviceName | default(config.headerTitle) }} | Planning Inspectorate
 	{% else %}
-		{{ serviceName | default(config.headerTitle) }}
+		{{ serviceName | default(config.headerTitle) }} | Planning Inspectorate
 	{% endif %}
 {% endblock %}
 
