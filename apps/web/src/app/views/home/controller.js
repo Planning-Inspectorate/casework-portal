@@ -1,4 +1,6 @@
 import { formatInTimeZone } from 'date-fns-tz';
+import { systems } from './systems.js';
+import * as authSession from '../../auth/session.service.js';
 
 /**
  * @param {import('#service').WebService} service
@@ -16,40 +18,23 @@ export function buildHome(service) {
 		return res.render('views/home/view.njk', {
 			pageCaption: `${greeting()} ${me.givenName},`,
 			pageHeading: 'What would you like to do today?',
-			links: [
-				{
-					title: 'Manage appeals',
-					description: 'Access the Manage appeals service to view casework and issue decisions',
-					url: 'https://back-office-appeals.planninginspectorate.gov.uk/'
-				},
-				{
-					title: 'Programme appeals',
-					description: 'Access the Programme appeals service to view unassigned cases and allocate Inspectors',
-					url: 'https://casework-programming.planninginspectorate.gov.uk/'
-				},
-				{
-					title: 'Manage NSIPs',
-					description: 'Access the Manage NSIPs service to view casework and documentation',
-					url: 'https://back-office-applications.planninginspectorate.gov.uk/'
-				},
-				{
-					title: 'Manage Crown developments',
-					description: 'Access the Manage Crown developments service to view casework and documentation',
-					url: 'https://crown-developments-manage.planninginspectorate.gov.uk/'
-				},
-				{
-					title: 'Submit a decision for reading',
-					description: 'Access CheckMark to submit a decision for reading',
-					url: 'https://checkmarkclient.azurewebsites.net/my-decisions/new-decision/'
-				},
-				{
-					title: 'Read a decision',
-					description: 'Access CheckMark to read a decision',
-					url: 'https://checkmarkclient.azurewebsites.net/my-reading'
-				}
-			]
+			links: systems.filter((s) => userHasSystemAccess(req.session, s.entraGroups))
 		});
 	};
+}
+
+/**
+ * @param session
+ * @param {string[]} groupIds
+ * @returns {boolean}
+ */
+function userHasSystemAccess(session, groupIds) {
+	const account = authSession.getAccount(session);
+
+	if (account?.idTokenClaims.groups) {
+		return groupIds.some((id) => account.idTokenClaims.groups.includes(id));
+	}
+	return false;
 }
 
 function greeting() {
