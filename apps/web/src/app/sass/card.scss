@@ -7,7 +7,7 @@ $pins-colours-grey-100: #f3f2f1;
 	position: relative;
 	width: 100%;
 
-	border-bottom: 4px solid $pins-colours-teal-100;
+	border-bottom: 4px solid $pins-colours-grey-100;
 	border-left: 0;
 	border-right: 0;
 	border-top: 0;
@@ -121,4 +121,8 @@ $pins-colours-grey-100: #f3f2f1;
 	.pins-card-group__item:last-child .pins-card {
 		margin-bottom: 0;
 	}
+}
+
+.pins-card--teal {
+	border-bottom: 4px solid $pins-colours-teal-100;
 }

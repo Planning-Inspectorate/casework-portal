@@ -7,17 +7,27 @@
 {% block pageContent %}
     <ul class="govuk-grid-row pins-card-group">
         {% for link in links %}
+            {% set cardClasses = '' %}
+            {% set linkClasses = 'govuk-link--muted govuk-link--no-underline' %}
+            {% if link.userHasAccess %}
+                {% set cardClasses = 'pins-card--teal pins-card--clickable' %}
+                {% set linkClasses = 'govuk-link--no-visited-state' %}
+            {% endif %}
             <li class="govuk-grid-column-one-third pins-card-group__item govuk-!-margin-bottom-4">
-                <div class="pins-card pins-card--clickable">
+                <div class="pins-card {{ cardClasses }}">
                     <div class="pins-card__content">
                         <h2 class="pins-card__heading govuk-header-m">
-                            <a href="{{ link.url }}" class="govuk-link govuk-link--no-visited-state">
+                            <a href="{{ link.url }}" class="govuk-link {{ linkClasses }}">
                                 {{ link.title }}
                             </a>
                         </h2>
                         <div class="pins-card__description">
                             <p class="govuk-body">
-                                {{ link.description }}
+                                {% if link.useHasAccess %}
+                                    {{ link.description }}
+                                {% else %}
+                                    You do not have access to this service.
+                                {% endif %}
                             </p>
                         </div>
                     </div>

@@ -18,7 +18,10 @@ export function buildHome(service) {
 		return res.render('views/home/view.njk', {
 			pageCaption: `${greeting()} ${me.givenName},`,
 			pageHeading: 'What would you like to do today?',
-			links: systems.filter((s) => userHasSystemAccess(req.session, s.entraGroups))
+			links: systems.map((s) => {
+				s.userHasAccess = userHasSystemAccess(req.session, s.entraGroups);
+				return s;
+			})
 		});
 	};
 }
