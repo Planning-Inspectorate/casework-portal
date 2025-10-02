@@ -34,7 +34,6 @@ export function loadConfig() {
 		AUTH_CLIENT_ID,
 		AUTH_CLIENT_SECRET,
 		AUTH_DISABLED,
-		AUTH_GROUP_APPLICATION_ACCESS,
 		AUTH_TENANT_ID,
 		CACHE_CONTROL_MAX_AGE,
 		GIT_SHA,
@@ -68,7 +67,6 @@ export function loadConfig() {
 		const props = {
 			AUTH_CLIENT_ID,
 			AUTH_CLIENT_SECRET,
-			AUTH_GROUP_APPLICATION_ACCESS,
 			AUTH_TENANT_ID
 		};
 		for (const [k, v] of Object.entries(props)) {
@@ -87,9 +85,6 @@ export function loadConfig() {
 			clientId: AUTH_CLIENT_ID,
 			clientSecret: AUTH_CLIENT_SECRET,
 			disabled: authDisabled,
-			groups: {
-				applicationAccess: AUTH_GROUP_APPLICATION_ACCESS
-			},
 			redirectUri: `${protocol}${APP_HOSTNAME}/auth/redirect`,
 			signoutUrl: 'https://login.microsoftonline.com/common/oauth2/v2.0/logout'
 		},
@@ -132,29 +127,4 @@ export function loadBuildConfig() {
 		srcDir,
 		staticDir
 	};
-}
-
-/**
- * Load the environment the application is running in. The value should be
- * one of the ENVIRONMENT_NAME values defined at the top of the file, and matches
- * the environment variable in the infrastructure code.
- *
- * @returns {string}
- */
-export function loadEnvironmentConfig() {
-	// load configuration from .env file into process.env
-	dotenv.config();
-
-	// get values from the environment
-	const { ENVIRONMENT } = process.env;
-
-	if (!ENVIRONMENT) {
-		throw new Error('ENVIRONMENT is required');
-	}
-
-	if (!Object.values(ENVIRONMENT_NAME).includes(ENVIRONMENT)) {
-		throw new Error(`ENVIRONMENT must be one of: ${Object.values(ENVIRONMENT_NAME)}`);
-	}
-
-	return ENVIRONMENT;
 }

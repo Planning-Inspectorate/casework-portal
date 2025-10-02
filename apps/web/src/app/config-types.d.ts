@@ -6,10 +6,6 @@ interface Config extends BaseConfig {
 		clientId: string;
 		clientSecret: string;
 		disabled: boolean;
-		groups: {
-			// group ID for accessing the application
-			applicationAccess: string;
-		};
 		redirectUri: string;
 		signoutUrl: string;
 	};

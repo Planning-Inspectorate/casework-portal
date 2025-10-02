@@ -30,8 +30,6 @@ export function buildRouter(service) {
 
 		// check logged in
 		router.use(authGuards.assertIsAuthenticated);
-		// check group membership
-		router.use(authGuards.assertGroupAccess);
 	} else {
 		service.logger.warn('auth disabled; auth routes and guards skipped');
 	}

@@ -1,13 +1,13 @@
 import { Router as createRouter } from 'express';
 import { asyncHandler } from '@pins/casework-portal-lib/util/async-handler.js';
 import { buildCompleteMsalAuthentication, buildHandleSignout, buildStartMsalAuthentication } from './controller.js';
-import { assertIsUnauthenticated, buildAssertGroupAccess, buildAssertIsAuthenticated } from './guards.js';
+import { assertIsUnauthenticated, buildAssertIsAuthenticated } from './guards.js';
 import { AuthService, clearAuthenticationData, registerAuthLocals } from './auth-service.js';
 
 /**
  * @param {import('#service').WebService} service
  * @param {import('./auth-service.js').AuthService} [authService] - for testing
- * @returns {{router: import('express').Router, guards: {assertIsAuthenticated: import('express').Handler, assertGroupAccess: import('express').Handler}}}
+ * @returns {{router: import('express').Router, guards: {assertIsAuthenticated: import('express').Handler}}
  */
 export function createRoutesAndGuards(service, authService) {
 	const router = createRouter();
@@ -37,14 +37,11 @@ export function createRoutesAndGuards(service, authService) {
 	// create auth guards - to register after the auth routes with the parent router
 	// check logged in
 	const assertIsAuthenticated = buildAssertIsAuthenticated(service.logger, authService);
-	// check group membership
-	const assertGroupAccess = buildAssertGroupAccess(service.logger, service.authConfig.groups.applicationAccess);
 
 	return {
 		router,
 		guards: {
-			assertIsAuthenticated,
-			assertGroupAccess
+			assertIsAuthenticated
 		}
 	};
 }
