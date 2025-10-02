@@ -44,5 +44,12 @@ export const systems = [
 		description: 'Access CheckMark to read a decision',
 		url: 'https://checkmarkclient.azurewebsites.net/my-reading',
 		entraGroups: ['ee2077a1-3526-42ca-bd5a-0d4bb55e1c53']
+	},
+	{
+		title: 'Library',
+		description:
+			'A repository of planning regulations, legislation and relevant court decisions, as well as materials on best practice.',
+		url: 'https://library.planninginspectorate.gov.uk/',
+		entraGroups: []
 	}
 ];

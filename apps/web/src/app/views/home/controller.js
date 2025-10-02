@@ -32,6 +32,9 @@ export function buildHome(service) {
  * @returns {boolean}
  */
 function userHasSystemAccess(session, groupIds) {
+	if (groupIds.length === 0) {
+		return true;
+	}
 	const account = authSession.getAccount(session);
 
 	if (account?.idTokenClaims.groups) {
