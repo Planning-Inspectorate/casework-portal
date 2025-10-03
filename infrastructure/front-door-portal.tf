@@ -41,7 +41,7 @@ resource "azurerm_cdn_frontdoor_custom_domain" "portal" {
   provider                 = azurerm.front_door
 
   tls {
-    certificate_type    = "ManagedCertificate"
+    certificate_type = "ManagedCertificate"
   }
 }
 
