@@ -32,15 +32,9 @@ module "app_portal" {
   public_network_access  = true
 
   # monitoring
-  log_analytics_workspace_id = azurerm_application_insights.main.id
-  monitoring_alerts_enabled  = false
-  action_group_ids = { # unused
-    iap             = ""
-    info_sec        = ""
-    its             = ""
-    service_manager = ""
-    tech            = ""
-  }
+  log_analytics_workspace_id        = azurerm_application_insights.main.id
+  monitoring_alerts_enabled         = false
+  action_group_ids                  = local.action_group_ids
   health_check_path                 = "/health"
   health_check_eviction_time_in_min = 10
 

@@ -7,6 +7,13 @@ data "azurerm_virtual_network" "tooling" {
   provider = azurerm.tooling
 }
 
+data "azurerm_monitor_action_group" "common" {
+  for_each = tomap(var.common_config.action_group_names)
+
+  resource_group_name = var.common_config.resource_group_name
+  name                = each.value
+}
+
 data "azurerm_cdn_frontdoor_profile" "shared" {
   name                = var.front_door_config.name
   resource_group_name = var.front_door_config.rg

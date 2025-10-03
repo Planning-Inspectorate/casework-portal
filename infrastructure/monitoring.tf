@@ -29,3 +29,41 @@ resource "azurerm_key_vault_secret" "app_insights_connection_string" {
 
   tags = local.tags
 }
+
+resource "azurerm_monitor_action_group" "tech" {
+  name                = "pins-ag-${local.service_name}-tech-${var.environment}"
+  resource_group_name = azurerm_resource_group.primary.name
+  short_name          = "CaseworkP"
+  tags                = local.tags
+
+  # we set emails in the action groups in Azure Portal - to avoid needing to manage emails in terraform
+  lifecycle {
+    ignore_changes = [
+      email_receiver
+    ]
+  }
+}
+
+resource "azurerm_monitor_action_group" "service_manager" {
+  name                = "pins-ag-${local.service_name}-service-manager-${var.environment}"
+  resource_group_name = azurerm_resource_group.primary.name
+  short_name          = "CaseworkP"
+  tags                = local.tags
+
+  # we set emails in the action groups in Azure Portal - to avoid needing to manage emails in terraform
+  lifecycle {
+    ignore_changes = [
+      email_receiver
+    ]
+  }
+}
+
+locals {
+  action_group_ids = {
+    tech            = azurerm_monitor_action_group.tech.id
+    service_manager = azurerm_monitor_action_group.service_manager.id
+    iap             = data.azurerm_monitor_action_group.common["iap"].id,
+    its             = data.azurerm_monitor_action_group.common["its"].id,
+    info_sec        = data.azurerm_monitor_action_group.common["info_sec"].id
+  }
+}

@@ -23,6 +23,15 @@ apps_config = {
   }
 }
 
+common_config = {
+  resource_group_name = "pins-rg-common-prod-ukw-001"
+  action_group_names = {
+    iap      = "pins-ag-odt-iap-prod"
+    its      = "pins-ag-odt-its-prod"
+    info_sec = "pins-ag-odt-info-sec-prod"
+  }
+}
+
 environment = "prod"
 
 front_door_config = {
