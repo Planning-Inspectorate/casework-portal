@@ -22,18 +22,12 @@ extends:
   parameters:
     environments:
       - name: Dev
-      - name: Test
-        dependsOn:
-          - Dev
-      - name: Training
-        dependsOn:
-          - Test
       - name: Prod
         dependsOn:
-          - Training
-    serviceConnectionPrefix: Azure DevOps Pipelines - <casework-portal> - Infrastructure
-    storageAccountName: pinssttfstateuks<casework-portal>
+          - Dev
+    serviceConnectionPrefix: Azure DevOps Pipelines - Casework Portal - Infrastructure
+    storageAccountName: pinssttfstateukscwp
     resourceGroupName: pins-rg-shared-terraform-uks
-    containerPrefix: terraform-state-<casework-portal>-
+    containerPrefix: terraform-state-casework-portal-
     workingDirectory: $(Build.Repository.LocalPath)/infrastructure
     environmentVarFilePath: $(Build.Repository.LocalPath)/infrastructure/environments
