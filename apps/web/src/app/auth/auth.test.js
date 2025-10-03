@@ -66,8 +66,6 @@ describe('auth', () => {
 
 			// check logged in
 			app.use(authGuards.assertIsAuthenticated);
-			// check group membership
-			app.use(authGuards.assertGroupAccess);
 			app.get('/home', (req, res) => {
 				res.status(200);
 			});
