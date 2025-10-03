@@ -26,7 +26,7 @@ extends:
         dependsOn:
           - Dev
     serviceConnectionPrefix: Azure DevOps Pipelines - Casework Portal - Infrastructure
-    storageAccountName: pinssttfstateukscwp
+    storageAccountName: pinssttfstatecwp
     resourceGroupName: pins-rg-shared-terraform-uks
     containerPrefix: terraform-state-casework-portal-
     workingDirectory: $(Build.Repository.LocalPath)/infrastructure
