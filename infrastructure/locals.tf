@@ -3,7 +3,8 @@ locals {
   service_name     = "casework-portal"
   primary_location = "uk-south"
 
-  resource_suffix = "${local.service_name}-${var.environment}"
+  resource_suffix       = "${local.service_name}-${var.environment}"
+  short_resource_suffix = "casework-p-${var.environment}"
 
   tags = {
     CreatedBy   = "terraform"
