@@ -6,7 +6,7 @@ module "app_portal" {
   location            = module.primary_region.location
 
   # naming
-  app_name        = "portal"
+  app_name        = "web"
   resource_suffix = var.environment
   service_name    = local.service_name
   tags            = local.tags
@@ -19,7 +19,7 @@ module "app_portal" {
   # container
   container_registry_name = var.tooling_config.container_registry_name
   container_registry_rg   = var.tooling_config.container_registry_rg
-  image_name              = "manage-casework/portal"
+  image_name              = "casework-portal/web"
 
   # networking
   app_service_private_dns_zone_id = data.azurerm_private_dns_zone.app_service.id
