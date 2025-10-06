@@ -32,7 +32,7 @@ module "app_portal" {
   public_network_access  = true
 
   # monitoring
-  log_analytics_workspace_id        = azurerm_application_insights.main.id
+  log_analytics_workspace_id        = azurerm_log_analytics_workspace.main.id
   monitoring_alerts_enabled         = false
   action_group_ids                  = local.action_group_ids
   health_check_path                 = "/health"
