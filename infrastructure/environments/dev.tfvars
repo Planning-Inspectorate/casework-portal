@@ -1,6 +1,6 @@
 apps_config = {
   app_service_plan = {
-    sku                      = "B1"
+    sku                      = "P0v3"
     per_site_scaling_enabled = false
     worker_count             = 1
     zone_balancing_enabled   = false
