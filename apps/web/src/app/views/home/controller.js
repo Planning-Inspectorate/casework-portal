@@ -15,13 +15,17 @@ export function buildHome(service) {
 
 		const me = await entra.me();
 
-		return res.render('views/home/view.njk', {
-			pageCaption: `${greeting()} ${me.givenName},`,
-			pageHeading: 'What would you like to do today?',
-			links: systems.map((s) => {
+		const links = systems
+			.map((s) => {
 				s.userHasAccess = userHasSystemAccess(req.session, s.entraGroups);
 				return s;
 			})
+			.filter((s) => s.userHasAccess);
+
+		return res.render('views/home/view.njk', {
+			pageCaption: `${greeting()} ${me.givenName},`,
+			pageHeading: 'What would you like to do today?',
+			links
 		});
 	};
 }
