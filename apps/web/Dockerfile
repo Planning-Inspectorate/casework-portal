@@ -19,7 +19,6 @@ ENV NODE_ENV=production
 ENV GIT_SHA=$GIT_SHA
 
 RUN npm run build --workspace=casework-portal-web
-RUN npm run db-generate
 
 # --------------------------------
 
