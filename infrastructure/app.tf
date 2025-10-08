@@ -49,6 +49,7 @@ module "app_portal" {
     AUTH_CLIENT_ID     = var.apps_config.auth.client_id
     AUTH_CLIENT_SECRET = local.key_vault_refs["client-secret"]
     AUTH_TENANT_ID     = data.azurerm_client_config.current.tenant_id
+    APP_HOSTNAME       = var.web_domains.portal
 
     # logging
     LOG_LEVEL = var.apps_config.logging.level
