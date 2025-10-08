@@ -9,7 +9,7 @@ apps_config = {
   private_endpoint_enabled = true
 
   auth = {
-    client_id = "30a34d1a-473e-4a7f-ad6d-fa574c52a509"
+    client_id = "a8247e49-7c18-4673-9e9d-04e478fe4129"
   }
 
   logging = {
