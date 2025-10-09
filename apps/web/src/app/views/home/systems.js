@@ -28,8 +28,8 @@ export const systems = [
 		]
 	},
 	{
-		title: 'Manage Crown developments applications',
-		description: 'Access the Manage Crown developments applications service to view casework and documentation',
+		title: 'Manage Crown Development applications',
+		description: 'Access the Manage Crown Development applications service to view casework and documentation',
 		url: 'https://crown-developments-manage.planninginspectorate.gov.uk/',
 		entraGroups: ['1abf7720-2ea6-479e-822d-218917d3d0ee']
 	},
