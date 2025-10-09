@@ -1,4 +1,4 @@
-$pins-colours-teal-100: #10847e;
+$pins-colours-mhclg-green: #00625e;
 $pins-colours-grey-100: #f3f2f1;
 
 .pins-card {
@@ -57,7 +57,7 @@ $pins-colours-grey-100: #f3f2f1;
 .pins-card--clickable:hover .pins-card__link,
 .pins-card--clickable:active .pins-card__heading a,
 .pins-card--clickable:active .pins-card__link {
-	color: $pins-colours-teal-100;
+	color: $pins-colours-mhclg-green;
 	text-decoration: none;
 }
 
@@ -124,5 +124,5 @@ $pins-colours-grey-100: #f3f2f1;
 }
 
 .pins-card--teal {
-	border-bottom: 4px solid $pins-colours-teal-100;
+	border-bottom: 4px solid $pins-colours-mhclg-green;
 }
