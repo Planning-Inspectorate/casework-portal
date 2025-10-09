@@ -1,5 +1,14 @@
-$pins-colours-mhclg-green: #00625e;
+@use 'sass:map' as map;
+@use 'node_modules/govuk-frontend/dist/govuk/settings/_colours-organisations.scss' as org-colors;
+
+$pins-colours-mhclg-green: map.get(
+	org-colors.$govuk-colours-organisations,
+	'ministry-of-housing-communities-local-government',
+	'colour'
+);
 $pins-colours-grey-100: #f3f2f1;
+$border-color: #aeb7bd;
+$hover-border-color: $pins-colours-mhclg-green;
 
 .pins-card {
 	margin-bottom: 40px;
@@ -7,7 +16,7 @@ $pins-colours-grey-100: #f3f2f1;
 	position: relative;
 	width: 100%;
 
-	border-bottom: 4px solid $pins-colours-grey-100;
+	border-bottom: 4px solid $border-color;
 	border-left: 0;
 	border-right: 0;
 	border-top: 0;
@@ -69,11 +78,11 @@ $pins-colours-grey-100: #f3f2f1;
 }
 
 .pins-card--clickable:hover {
-	border-color: #aeb7bd;
+	border-color: $hover-border-color;
 }
 
 .pins-card--clickable:active {
-	border-color: #aeb7bd;
+	border-color: $hover-border-color;
 	bottom: -1px;
 }
 
@@ -121,8 +130,4 @@ $pins-colours-grey-100: #f3f2f1;
 	.pins-card-group__item:last-child .pins-card {
 		margin-bottom: 0;
 	}
-}
-
-.pins-card--teal {
-	border-bottom: 4px solid $pins-colours-mhclg-green;
 }
