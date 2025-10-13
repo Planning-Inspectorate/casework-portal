@@ -19,8 +19,8 @@
     "test-coverage": "node --test --experimental-test-coverage"
   },
   "dependencies": {
-    "@azure/identity": "^4.12.0",
-    "@azure/msal-node": "^3.7.4",
+    "@azure/identity": "^4.13.0",
+    "@azure/msal-node": "^3.8.0",
     "accessible-autocomplete": "^3.0.1",
     "body-parser": "^2.2.0",
     "connect-redis": "^9.0.0",
