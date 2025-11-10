@@ -25,7 +25,6 @@ extends:
   parameters:
     gitFetchDepth: 0
     skipAzureAuth: true
-    skipGitTagging: true
     validationJobs:
       - name: Check Commits
         steps:
