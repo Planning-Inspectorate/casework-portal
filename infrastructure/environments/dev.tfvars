@@ -41,6 +41,11 @@ front_door_config = {
   use_tooling = true
 }
 
+monitoring_config = {
+  app_insights_web_test_enabled = false
+  log_daily_cap                 = 0.1
+}
+
 vnet_config = {
   address_space             = "10.23.0.0/22"
   apps_subnet_address_space = "10.23.0.0/24"
