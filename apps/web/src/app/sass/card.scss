@@ -1,5 +1,5 @@
 @use 'sass:map' as map;
-@use 'node_modules/govuk-frontend/dist/govuk/settings/_colours-organisations.scss' as org-colors;
+@use 'node_modules/govuk-frontend/dist/govuk/settings/colours-organisations' as org-colors;
 
 $pins-colours-mhclg-green: map.get(
 	org-colors.$govuk-colours-organisations,
