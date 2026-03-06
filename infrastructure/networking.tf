@@ -80,5 +80,7 @@ resource "azurerm_private_dns_zone_virtual_network_link" "keyvault" {
   private_dns_zone_name = data.azurerm_private_dns_zone.keyvault.name
   virtual_network_id    = azurerm_virtual_network.main.id
 
+  tags = local.tags
+
   provider = azurerm.tooling
 }

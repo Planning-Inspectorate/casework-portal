@@ -28,7 +28,11 @@ resource "azurerm_key_vault_secret" "manual_secrets" {
   value        = "<terraform_placeholder>"
   content_type = "plaintext"
 
-  depends_on = [azurerm_private_dns_zone_virtual_network_link.keyvault]
+  depends_on = [
+    azurerm_private_endpoint.keyvault,
+    azurerm_private_dns_zone_virtual_network_link.keyvault
+  ]
+
   lifecycle {
     ignore_changes = [
       value
@@ -72,4 +76,6 @@ resource "azurerm_private_endpoint" "keyvault" {
     subresource_names              = ["vault"]
     is_manual_connection           = false
   }
+
+  tags = local.tags
 }
