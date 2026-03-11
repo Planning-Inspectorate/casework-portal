@@ -14,7 +14,7 @@ export const systems = [
 	{
 		title: 'Programme appeals',
 		description: 'Access the Programme appeals service to view unassigned cases and allocate Inspectors',
-		url: 'https://casework-programming.planninginspectorate.gov.uk/',
+		url: 'https://programme-appeals.planninginspectorate.gov.uk/',
 		entraGroups: ['128f1af5-2438-443b-bec0-99e93e3989d0']
 	},
 	{
