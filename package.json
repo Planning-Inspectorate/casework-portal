@@ -43,7 +43,7 @@
     "@eslint/js": "^10.0.1",
     "@microsoft/microsoft-graph-types": "^2.43.1",
     "cookie-parser": "^1.4.7",
-    "eslint": "^10.0.3",
+    "eslint": "^10.1.0",
     "eslint-config-prettier": "^10.1.8",
     "globals": "^17.4.0",
     "husky": "^9.1.7",
