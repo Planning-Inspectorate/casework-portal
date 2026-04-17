@@ -54,7 +54,7 @@ export const systems = [
 	},
 	{
 		title: 'MPESC',
-		description: 'Access Manage planning, environmental and specialist casework to view casework and documentation',
+		description: 'Access the Manage planning, environmental and specialist casework to view casework and documentation',
 		url: 'https://mpesc.planninginspectorate.gov.uk/cases',
 		entraGroups: ['41627e43-4549-4ec5-bf57-9c869f7aeecb']
 	}
