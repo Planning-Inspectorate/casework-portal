@@ -12,7 +12,6 @@
     "@azure/msal-node": "*",
     "connect-redis": "*",
     "express-session": "*",
-    "notifications-node-client": "^8.3.2",
     "pino": "*",
     "pino-pretty": "*",
     "redis": "*"
