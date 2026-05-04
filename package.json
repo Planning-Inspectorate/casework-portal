@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@azure/identity": "^4.13.1",
-    "@azure/msal-node": "^5.1.4",
+    "@azure/msal-node": "^5.1.5",
     "accessible-autocomplete": "^3.0.1",
     "body-parser": "^2.2.2",
     "connect-redis": "^9.0.0",
