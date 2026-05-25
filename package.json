@@ -38,20 +38,20 @@
     "redis": "^5.12.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.0.0",
-    "@commitlint/config-conventional": "^21.0.0",
+    "@commitlint/cli": "^21.0.1",
+    "@commitlint/config-conventional": "^21.0.1",
     "@eslint/js": "^10.0.1",
     "@microsoft/microsoft-graph-types": "^2.43.1",
     "cookie-parser": "^1.4.7",
-    "eslint": "^10.3.0",
+    "eslint": "^10.4.0",
     "eslint-config-prettier": "^10.1.8",
     "globals": "^17.6.0",
     "husky": "^9.1.7",
-    "lint-staged": "^17.0.4",
+    "lint-staged": "^17.0.5",
     "nodemon": "^3.1.14",
     "prettier": "^3.8.3",
     "prettier-plugin-prisma": "^5.0.0",
-    "sass": "^1.99.0"
+    "sass": "^1.100.0"
   },
   "lint-staged": {
     "*.js": [
