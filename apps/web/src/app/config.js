@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+import { loadEnvFile } from 'node:process';
 import path from 'node:path';
 import { fileURLToPath } from 'url';
 
@@ -26,7 +26,11 @@ export function loadConfig() {
 		return config;
 	}
 	// load configuration from .env file into process.env
-	dotenv.config();
+	try {
+		loadEnvFile();
+	} catch {
+		/* ignore errors*/
+	}
 
 	// get values from the environment
 	const {
