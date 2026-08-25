@@ -1,4 +1,4 @@
-import { EntraClient } from './entra.js';
+import type { EntraClient } from './entra.js';
 
 interface AuthSession {
 	account?: {
