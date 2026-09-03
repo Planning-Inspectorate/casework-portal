@@ -1,8 +1,8 @@
 import { Router as createRouter } from 'express';
-import { createRoutesAndGuards as createAuthRoutesAndGuards } from './auth/router.js';
-import { createMonitoringRoutes } from '@pins/casework-portal-lib/controllers/monitoring.js';
+import { createRoutesAndGuards as createAuthRoutesAndGuards } from '@planning-inspectorate/core/auth';
+import { createMonitoringRoutes } from '@planning-inspectorate/core/controllers';
+import { cacheNoCacheMiddleware } from '@planning-inspectorate/core/middleware';
 import { createErrorRoutes } from './views/static/error/index.js';
-import { cacheNoCacheMiddleware } from '@pins/casework-portal-lib/middleware/cache.js';
 import { buildHome } from './views/home/controller.js';
 
 /**

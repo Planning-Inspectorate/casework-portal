@@ -1,4 +1,4 @@
-import { BaseService } from '@pins/casework-portal-lib/app/base-service.js';
+import { BaseService } from '@planning-inspectorate/core/app';
 import { buildInitEntraClient } from '@pins/casework-portal-lib/entra/entra.js';
 
 /**
@@ -15,7 +15,7 @@ export class WebService extends BaseService {
 	 * @param {import('./config-types.js').Config} config
 	 */
 	constructor(config) {
-		super(config);
+		super(config, () => {});
 		this.#config = config;
 
 		this.initEntraClient = buildInitEntraClient(!config.auth.disabled);

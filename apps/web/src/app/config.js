@@ -89,6 +89,9 @@ export function loadConfig() {
 			clientId: AUTH_CLIENT_ID,
 			clientSecret: AUTH_CLIENT_SECRET,
 			disabled: authDisabled,
+			groups: {
+				applicationAccess: 'unused'
+			},
 			redirectUri: `${protocol}${APP_HOSTNAME}/auth/redirect`,
 			signoutUrl: 'https://login.microsoftonline.com/common/oauth2/v2.0/logout'
 		},

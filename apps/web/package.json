@@ -15,6 +15,7 @@
     "@azure/msal-node": "*",
     "@microsoft/microsoft-graph-client": "*",
     "@pins/casework-portal-lib": "^0.0.0",
+    "@planning-inspectorate/core": "*",
     "accessible-autocomplete": "*",
     "body-parser": "*",
     "connect-redis": "*",
