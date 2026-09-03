@@ -1,6 +1,6 @@
 import { formatInTimeZone } from 'date-fns-tz';
 import { systems } from './systems.js';
-import * as authSession from '../../auth/session.service.js';
+import * as authSession from '@planning-inspectorate/core/auth';
 
 /**
  * @param {import('#service').WebService} service

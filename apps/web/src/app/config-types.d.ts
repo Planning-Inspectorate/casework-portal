@@ -1,4 +1,4 @@
-import type { BaseConfig } from '@pins/casework-portal-lib/app/config-types';
+import type { BaseConfig } from '@planning-inspectorate/core/app';
 
 interface Config extends BaseConfig {
 	auth: {

@@ -1,7 +1,7 @@
 import { buildRouter } from './router.js';
 import { configureNunjucks } from './nunjucks.js';
 import { addLocalsConfiguration } from '#util/config-middleware.js';
-import { createBaseApp } from '@pins/casework-portal-lib/app/app.js';
+import { createBaseApp } from '@planning-inspectorate/core/app';
 
 /**
  * @param {import('#service').WebService} service
