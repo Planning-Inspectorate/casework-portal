@@ -19,9 +19,9 @@
     "test-coverage": "node --test --experimental-test-coverage"
   },
   "dependencies": {
-    "@azure/identity": "^4.13.2",
-    "@azure/msal-node": "^6.0.0",
-    "@planning-inspectorate/core": "^1.9.0",
+    "@azure/identity": "^4.13.3",
+    "@azure/msal-node": "^6.0.1",
+    "@planning-inspectorate/core": "^1.13.1",
     "accessible-autocomplete": "^3.0.1",
     "body-parser": "^2.3.0",
     "connect-redis": "^10.0.0",
@@ -30,7 +30,7 @@
     "express": "^5.2.1",
     "express-session": "^1.19.0",
     "express-validator": "^7.3.2",
-    "govuk-frontend": "^6.5.0",
+    "govuk-frontend": "^6.5.1",
     "helmet": "^8.3.0",
     "nunjucks": "^3.2.4",
     "pino": "^10.3.1",
