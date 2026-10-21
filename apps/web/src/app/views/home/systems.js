@@ -57,5 +57,11 @@ export const systems = [
 		description: 'Access the Manage planning, environmental and specialist casework to view casework and documentation',
 		url: 'https://mpesc.planninginspectorate.gov.uk/cases',
 		entraGroups: ['41627e43-4549-4ec5-bf57-9c869f7aeecb']
+	},
+	{
+		title: 'Section 62A',
+		description: 'Access Manage Section 62A applications to view casework and documentation',
+		url: 'https://crown-developments-manage.planninginspectorate.gov.uk/s62a/cases',
+		entraGroups: ['1abf7720-2ea6-479e-822d-218917d3d0ee']
 	}
 ];
