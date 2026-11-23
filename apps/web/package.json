@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@azure/msal-node": "*",
-    "@microsoft/microsoft-graph-client": "*",
+    "@microsoft/microsoft-graph-client": "^3.1.0",
     "@pins/casework-portal-lib": "^0.0.0",
     "@planning-inspectorate/core": "*",
     "accessible-autocomplete": "*",
